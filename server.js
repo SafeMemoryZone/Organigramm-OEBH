@@ -2,26 +2,17 @@ import fs from "fs";
 import readline from "readline";
 import pg from "pg";
 import { execSync } from "child_process";
+import dotenv from "dotenv";
 
-async function ask(question) {
-    const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
-    return new Promise(resolve =>
-        rl.question(question, ans => {
-            rl.close();
-            resolve(ans);
-        })
-    );
-}
+dotenv.config();
 
 async function main() {
-    const user = await ask("PostgreSQL username: ");
-    const password = await ask("PostgreSQL password: ");
-    const database = await ask("Database name: ");
-
     const client = new pg.Client({
-        user,
-        password,
-        database,
+        user: process.env.PG_USER,
+        password: process.env.PG_PASSWORD,
+        database: process.env.PG_DATABASE,
+        host: process.env.PG_HOST || "localhost",
+        port: process.env.PG_PORT || 5432,
     });
 
     await client.connect();

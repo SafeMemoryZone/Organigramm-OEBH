@@ -29,10 +29,7 @@ createdb bundesheer
 node server.js
 ```
 
-Das Script fragt nach:
-- PostgreSQL Benutzername
-- PostgreSQL Passwort
-- Name der Datenbank (z. B. `bundesheer`)
+Das Script liest `.env` und benutzt die Zugangsdaten
 
 Danach werden erzeugt:
 
