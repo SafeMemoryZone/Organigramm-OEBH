@@ -20,8 +20,8 @@ npm install
 ## Datenbank vorbereiten
 
 ```bash
-psql -U yourUser -d yourDB -h yourHost -p port -f schema.sql
 createdb bundesheer
+psql -U yourUser -d yourDB -h yourHost -p port -f schema.sql
 ```
 
 ## Ausführen
