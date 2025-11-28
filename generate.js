@@ -17,9 +17,9 @@ async function main() {
 
     await client.connect();
 
-    const sql = fs.readFileSync("schema.sql", "utf8");
-    await client.query(sql);
-    console.log("Database schema + data loaded.");
+    // const sql = fs.readFileSync("schema.sql", "utf8");
+    // await client.query(sql);
+    // console.log("Database schema + data loaded.");
 
     const query = `
         SELECT u.id, u.name, u.unit_code, p.unit_code AS parent

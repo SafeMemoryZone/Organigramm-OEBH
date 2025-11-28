@@ -20,13 +20,14 @@ npm install
 ## Datenbank vorbereiten
 
 ```bash
+psql -U yourUser -d yourDB -h yourHost -p port -f schema.sql
 createdb bundesheer
 ```
 
 ## Ausführen
 
 ```bash
-node server.js
+node generate.js
 ```
 
 Das Script liest `.env` und benutzt die Zugangsdaten
